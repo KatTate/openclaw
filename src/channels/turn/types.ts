@@ -17,6 +17,7 @@ import type {
 import type { CreateChannelReplyPipelineParams } from "../message/reply-pipeline.js";
 import type { MessageReceipt } from "../message/types.js";
 import type { InboundLastRouteUpdate, RecordInboundSession } from "../session.types.js";
+import type { InboundTurnKind } from "./kind.js";
 
 export type ChannelTurnAdmission =
   | { kind: "dispatch"; reason?: string }
@@ -29,8 +30,6 @@ export type ChannelEventClass = {
   canStartAgentTurn: boolean;
   requiresImmediateAck?: boolean;
 };
-
-export type InboundTurnKind = "user_request" | "room_event";
 
 export type NormalizedTurnInput = {
   id: string;
