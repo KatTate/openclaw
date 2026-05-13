@@ -30,6 +30,8 @@ export type ChannelEventClass = {
   requiresImmediateAck?: boolean;
 };
 
+export type InboundTurnKind = "user_request" | "room_event";
+
 export type NormalizedTurnInput = {
   id: string;
   timestamp?: number;
@@ -173,6 +175,7 @@ export type AccessFacts = {
 };
 
 export type MessageFacts = {
+  inboundTurnKind?: InboundTurnKind;
   body?: string;
   rawBody: string;
   bodyForAgent?: string;
